@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "flask-template"
+name = "app"
 version = "0.1.0"
 description = "A simple Flask template with built in SQLite database and login support"
 authors = ["Jeremie Bornais <jeremiejbornais@gmail.com>"]
