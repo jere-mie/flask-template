@@ -1,7 +1,8 @@
 # Project-specific
-config.py
 config.json
 site.db
+app.db
+.env
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
