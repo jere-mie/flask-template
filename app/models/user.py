@@ -1,4 +1,4 @@
-from website import db, login_manager
+from app.extensions import db, login_manager
 from flask_login import UserMixin
 
 @login_manager.user_loader
@@ -11,4 +11,4 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(60), nullable=False)
 
     def __repr__(self):
-        return f"Username: {self.username}"
+        return f"<User {self.id} {self.username}>"

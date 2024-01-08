@@ -1,23 +1,17 @@
-from website import app, db
-import os
-import json
 import sys
+from app import create_app
+from app.extensions import db
+from app.models import *
 
-# getting config details
-with open('config.json') as f:
-    data = json.load(f)
+app = create_app()
 
-# initializing db if it doesn't exist yet (change this if not using sqlite)
-if not os.path.exists("website/site.db"):
-    db.create_all()
+# Check if "debug" or "init_db" is passed as a command-line argument
+debug_mode = "debug" in sys.argv
+init_db = "init_db" in sys.argv
 
-# running debug site
-if __name__=='__main__':
-    # run this command with any additional arg to run in production
-    if len(sys.argv) > 1:
-        print('<< PROD >>')
-        os.system(f"gunicorn -b '127.0.0.1:{data['port']}' website:app")
-    # or just run without an additional arg to run in debug
-    else:
-        print('<< DEBUG >>')
-        app.run(debug=True)
+if init_db:
+    with app.app_context():
+        db.create_all()
+
+# Run the app with debug mode only if "debug" is in command-line arguments
+app.run(debug=debug_mode, host="0.0.0.0", port=app.config.get("PORT"))
