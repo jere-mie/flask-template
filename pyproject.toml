@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "flask-template"
+version = "0.1.0"
+description = "A simple Flask template with built in SQLite database and login support"
+authors = ["Jeremie Bornais <jeremiejbornais@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Flask = "^3.0.0"
+Flask-SQLAlchemy = "^3.1.1"
+Flask-Login = "^0.6.3"
+bcrypt = "^4.1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
