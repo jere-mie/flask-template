@@ -23,7 +23,7 @@ python3 -m pip install -r requirements.txt
 You can run the application with the command 
 
 ```sh
-python3 app.py
+python3 run.py
 ```
 
 By default, this will run the application on port 5000.
@@ -33,7 +33,7 @@ By default, this will run the application on port 5000.
 If this is your first time running the application, you need to initialize the database first. This is easy to do - simply use the command
 
 ```sh
-python3 app.py init_db
+python3 run.py init_db
 ```
 
 ### Running in Debug Mode
@@ -41,7 +41,7 @@ python3 app.py init_db
 Running your application in debug mode will help you during development because it'll allow you to see helpful messages when errors occur in your code. However, it's not safe to run a production app (open to the public) in debug mode, which is why it's disabled by default. To run the application in debug mode, simply use the command
 
 ```sh
-python3 app.py debug
+python3 run.py debug
 ```
 
 ## Environment Variables
@@ -83,7 +83,7 @@ FLASK_PORT=5001
 - **LICENSE**: License file for the template.
 - **README.md**: Readme file providing information about the template.
 - **app.db**: SQLite database file.
-- **app.py**: Main script to run the Flask application.
+- **run.py**: Main script to run the Flask application.
 - **config.py**: Configuration file for the Flask application.
 - **poetry.lock**: Poetry lock file (dependency version locking).
 - **pyproject.toml**: Poetry project configuration file.
